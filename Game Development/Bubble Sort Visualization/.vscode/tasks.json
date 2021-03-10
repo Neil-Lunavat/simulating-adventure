@@ -1,0 +1,43 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Compile and Run SDL Project FOR DEBUG",
+			"command": "cd '${cwd}' ; C:/mingw64/bin/g++.exe -c src/*.cpp -g -Wall -m64 -I'include' -I'C:/libsdl64/include' ; g++ *.o -o bin/debug/main -L'C:/libsdl64/lib' -lmingw32 -lSDL2main -lSDL2 -lSDL2_image ; bin/debug/main",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": true
+			},
+			"problemMatcher": ["$gcc"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: C:/mingw64/bin/g++.exe"
+		},
+		{
+			"type": "shell",
+			"label": "Compile and Run SDL Project FOR RELEASE",
+			"command": "cd '${cwd}' ; C:/mingw64/bin/g++.exe -c src/*.cpp -O3 -Wall -m64 -I'include' -I'C:/libsdl64/include' ; g++ *.o -o bin/release/main -s -L'C:/libsdl64/lib' -lmingw32 -lSDL2main -lSDL2 -lSDL2_image ; bin/release/main",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": true
+			},
+			"problemMatcher": ["$gcc"],
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"detail": "compiler: C:/mingw64/bin/g++.exe"
+		}
+	]
+}
